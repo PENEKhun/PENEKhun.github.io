@@ -18,18 +18,18 @@ timezone:
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Chirpy # the main title
+title: PeNeKKKKkkk # the main title
 
-tagline: A text-focused Jekyll theme # it will display as the sub-title
+tagline: 짱짱 개발자가 되고싶습니다. # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
-  A minimal, responsive and feature-rich Jekyll theme for technical writing.
+  It's a warm blog that contains my developer journey.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: ""
+url: "https://penekhun.github.io"
 
 github:
-  username: github_username # change to your github username
+  username: penekhun # change to your github username
 
 twitter:
   username: twitter_username # change to your twitter username
