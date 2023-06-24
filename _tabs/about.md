@@ -1,5 +1,5 @@
 ---
-# the default layout is 'page'
+# layout: post
 icon: fas fa-info-circle
 order: 4
 ---
@@ -67,22 +67,23 @@ order: 4
 <!-- <span id="slogan"></span> -->
 <!-- <br/> -->
 <!-- <span id="introduce"></span> -->
-> 이 문서는 축약 이력서로써, 각 단원의 링크를 클릭하면, 상세 페이지로 이동합니다.
+<!-- > 이 문서는 축약 이력서로써, 각 단원의 링크를 클릭하면, 상세 페이지로 이동합니다. -->
 
-(현재 공사중)....  
+# (현재 공사중입니다... )....  
 # 문성훈 **MoonSeonghun**
+
 ## 1. Outline
 ### 1.1. Profile
 이름 : 문성훈
 - 생년월일: 00. 10. 27.
 - 연락처: 010-
 - Github: [https://github.com/PENEKhun](https://github.com/PENEKhun)
-- Blog: [https://penekhun.github.io](https://penekhun.github.io/)
+- Blog: [https://blog.huni.kr](https://blog.huni.kr/)
 
 ### 1.2. Military Service
 - 3사단 포병여단 본부 전산병 - 병장 만기전역 <em>(20. 05. ~ 21. 11.)</em>
 
-###	1.3. Education
+### 1.3. Education
 - 순천향대학교 정보보호학과 <em>(19. 03. ~ 현재 재학중)</em>
 - 대구대학교 정보보호영재교육원 고등전문A 수료 (17. 03. ~ 17. 12.)
 
@@ -100,12 +101,14 @@ DB/SQL       | -           | -       | -
 
 
 ### 1.6. Publication & Speaker
-- 한국정보보호학회 동계학술대회 "Usable Security관점에서 본 포털사이트 로그인API의 취약점" <em>(17. 12. 09.)
-	- PDF Download (todo)
-	- Poster Download (todo)
+- **문성훈**, 이예진, 윤진희, 이재원(대구대학교 정보보호영재교육원), 김호엽(대구대학교), "Usable Security관점에서 본 포털사이트 로그인API의 취약점" <em>(17. 12. 09.)</em>
+	- [Download Document](/assets/aboutme/로그인api와usable_security _최최종_hykim-2.hwp)
+	- [Download Poster](/assets/aboutme/usableSecurity_poster.jpeg)
 
+<!-- 
 ### 1.7. Certification
 - NULL
+-->
 
 ### 1.8. Expreiences
 #### 1.8.1. **청소년 비영리 개발단체** PENEKSOFT
@@ -129,6 +132,7 @@ todo
 
 | Project            | Used My Skills              | Description
 |--------------------|--------------------|---------------------
+|아나바다 | Springboot, MySQL | todo |
 |피티모아 | Springboot, MySQL, VueJS | todo |
 |한글-짧은링크 | Springboot, MySQL, Thymeleaf | 한글 5글자로 전세계 모든 링크를 짧게 만들어 주는 웹 서비스 |
 
@@ -167,9 +171,7 @@ todo
 |summernote-image-attributes | 부트스트랩5 대응 [#74](https://github.com/DiemenDesign/summernote-image-attributes/issues/74) |
 
  
-
-
-
+<!--
 
 
 
@@ -286,22 +288,8 @@ todo
 	</div>
 </details>
 
-## 강점 **strength**
-- 문서화를 하는 습관이 되어 있습니다.
-
-- 배움에 대한 두려움이 없습니다.
-	- 학사와 프리랜서를 병행하여 다양한 환경에서 개발한 경험이 있습니다.
-		- 또한 프리랜서를 하며 다양한 사람(예를 들면 비전공자)들과 커뮤니케이션하는 법을 많이 배웠습니다.
-- 스스로에게 질문을 많이 던집니다.
-	- 더 좋은 방법은 없을까?
-	- 이게 왜 되는거지?
-
-
-## 관심사 **interest**
-- 실제 트래픽이 발생하는 서비스를 만들고 운영하는 것을 좋아합니다.
-
-## 주요 스킬 **skill**
-- Java
 
 
 
+
+-->
