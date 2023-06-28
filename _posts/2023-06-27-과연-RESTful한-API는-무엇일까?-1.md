@@ -1,20 +1,24 @@
 ---
 layout: post
 
-title: 과연 RESTful한 API는 무엇일까? > 1편
+title: 과연 RESTful한 API는 무엇일까? 1편
 
-subtitle: #1 What is RESTful API?
+subtitle: What is RESTful API?
 
-excerpt: 사람 혹은 조직마다 RESTful API에 대한 생각들이 차이가 있을 수 있습니다. 이에 대해서 얘기해보고자 합니다.
+excerpt: "사람 혹은 조직마다 RESTful API에 대한 생각들이 차이가 있을 수 있습니다. 이에 대해서 얘기해보고자 합니다."
 
 tags:
   - Java
   - Springboot
   - Toy
-  - Response
+  - RESTful
+
+image:
+  path: /assets/2023-06-27/fail_200.png
   
 published: true
 ---
+
 
 # 포스팅의 발단
 모 개발 오픈채팅 커뮤니티에서 옛날에 올라온 질문/답변들을 다시 읽어보게 되었습니다.  
@@ -27,9 +31,6 @@ published: true
 물론 회사 by 회사, 팀 by 팀마다 **확고하게** 다르겠지만,  
 해당 논쟁은 결코 가볍게 넘어가면 안되는 것이라 생각합니다.  
 왜냐면 사람마다 생각하고 있는 관점이 다를 수 있기 때문이죠.  
-
-![](/assets/2023-06-27/fail_200.png)
-
   
 예를 들면,  
 어떠한 백엔드 개발자는 실패를 성공적으로 전달했다는 의미로 상태 코드를 200(**OK**)를 리턴할 수도 있습니다. 그리고 또 다른 개발자는 이것을 단순 우스갯소리로 넘어갈 수 있지만, 어떤 개발자들은 이 상황을 납득할 수도 있습니다.  
@@ -50,7 +51,7 @@ published: true
 http 초기버전에는 GET 메서드가 유일했다고 합니다.  
 응답 또한 파일 내용 자체로 구성되었다고 합니다.  
 
-```http
+```text
 GET /mypage.html  
 
 <HTML>
@@ -63,30 +64,30 @@ A very simple HTML page
 ### HTTP/1.0
 - 이때부터는 HTTP버전이 각 요청에 전송되기 시작했다고 합니다.  
 - 헤더 개념이 도입되어 응답과 요청에 사용 될 수 있도록 하여, 유연하고 확장가능한 형태로 변경되었습니다.  
-```http
-GET /mypage.html HTTP/1.0
-User-Agent: NCSA_Mosaic/2.0 (Windows 3.1)
-
-200 OK
-Date: Tue, 15 Nov 1994 08:12:31 GMT
-Server: CERN/3.0 libwww/2.17
-Content-Type: text/html
-
-(이미지 태그가 담긴 HTML)
-```
-
+	```text
+	GET /mypage.html HTTP/1.0
+	User-Agent: NCSA_Mosaic/2.0 (Windows 3.1)
+	
+	200 OK
+	Date: Tue, 15 Nov 1994 08:12:31 GMT
+	Server: CERN/3.0 libwww/2.17
+	Content-Type: text/html
+	
+	(이미지 태그가 담긴 HTML)
+	```
 - 헤더내에 `Content-Type`를 지정하여 HTML 외 다른 문서들을 전송하는 기능이 추가되었습니다.  
-```http
-GET /myimage.gif HTTP/1.0
-User-Agent: NCSA_Mosaic/2.0 (Windows 3.1)
+	```text
+	GET /myimage.gif HTTP/1.0
+	User-Agent: NCSA_Mosaic/2.0 (Windows 3.1)
+	
+	200 OK
+	Date: Tue, 15 Nov 1994 08:12:32 GMT
+	Server: CERN/3.0 libwww/2.17
+	Content-Type: text/gif
+	
+	(이미지 자체 바이너리 리턴)
+	```
 
-200 OK
-Date: Tue, 15 Nov 1994 08:12:32 GMT
-Server: CERN/3.0 libwww/2.17
-Content-Type: text/gif
-
-(이미지 자체 바이너리 리턴)
-```
 
 ### ...... (생략)  
 .....
