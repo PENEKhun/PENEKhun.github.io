@@ -1,0 +1,266 @@
+---
+layout: post
+
+title: 과연 RESTful한 API는 무엇일까? - 1편
+
+subtitle: "What is RESTful API? - #1"
+
+excerpt: "사람 혹은 조직마다 RESTful API에 대한 생각들이 차이가 있을 수 있습니다. 이에 대해서 얘기해보고자 합니다."
+
+tags:
+  - RESTful
+  - HTTP
+
+image:
+  path: /assets/2023-06-27/fail_200.png
+  
+published: true
+---
+
+
+# 포스팅의 발단
+모 개발 오픈채팅 커뮤니티에서 옛날에 올라온 질문/답변들을 다시 읽어보게 되었습니다.  
+질문의 원문은 다음과 같았습니다.  
+
+>안녕하세요 궁금한 점이 있어 질문올립니다.  
+서버에서 예외(인가되지않은 접근, 리소스를 찾을 수 없음, 잘못된 요청 등 http 통신과 관련된 요청 등)와 같은 비즈니스 에러들은 상태코드를 200으로 쓰시나요?  
+유사한 http 에러를 찾아(ex, not found 404) body의 내용만 커스텀하여 사용하시나요?
+
+물론 회사 by 회사, 팀 by 팀마다 **확고하게** 다르겠지만,  
+해당 논쟁은 결코 가볍게 넘어가면 안되는 것이라 생각합니다.  
+왜냐면 사람마다 생각하고 있는 관점이 다를 수 있기 때문이죠.  
+  
+예를 들면,  
+어떠한 백엔드 개발자는 실패를 성공적으로 전달했다는 의미로 상태 코드를 200(**OK**)를 리턴할 수도 있습니다. 그리고 또 다른 개발자는 이것을 단순 우스갯소리로 넘어갈 수 있지만, 어떤 개발자들은 이 상황을 납득할 수도 있습니다.  
+  
+왜냐면 일반적으로 RESTful API 서버 응답에서는 상태 코드가 200인 경우엔 일반 성공 응답을 뜻하기 때문입니다.  
+이러한 의미로 해석했을 때 실패를 성공적으로 전달했다는 것도 나름 일맥상통하다고 볼 수 있겠네요.  
+  
+백엔드 개발자의 시선에서 봤을 때도 둘로 갈리는 문제인데,  
+여기서 프런트엔드 개발자가 추가된다면 의견 차이는 더 심해질 수 있습니다.  
+  
+결국 이러한 논쟁들은 정하기 나름인 주제이긴 하지만, 각자 마음속 깊은 어딘가에 꺼림칙한 부분들이 존재할 것입니다.
+
+
+# 일단 HTTP의 과거를 떠올려 보자
+## HTTP/0.9
+http 초기버전에는 GET 메서드가 유일했다고 합니다.  
+응답 또한 파일 내용 자체로 구성되었다고 합니다.  
+
+```text
+GET /mypage.html  
+
+<HTML>
+A very simple HTML page
+</HTML>
+```
+
+또한 이때는 상태코드도 없었고, HTML외의 다른 유형의 문서는 전송될 수 없었다고 합니다.  
+
+## HTTP/1.0
+- 이때부터는 HTTP버전이 각 요청에 전송되기 시작했다고 합니다.  
+- 헤더 개념이 도입되어 응답과 요청에 사용 될 수 있도록 하여, 유연하고 확장가능한 형태로 변경되었습니다.  
+	```text
+	GET /mypage.html HTTP/1.0
+	User-Agent: NCSA_Mosaic/2.0 (Windows 3.1)
+	
+	200 OK
+	Date: Tue, 15 Nov 1994 08:12:31 GMT
+	Server: CERN/3.0 libwww/2.17
+	Content-Type: text/html
+	
+	(이미지 태그가 담긴 HTML)
+	```
+- 헤더내에 `Content-Type`를 지정하여 HTML 외 다른 문서들을 전송하는 기능이 추가되었습니다.  
+	```text
+	GET /myimage.gif HTTP/1.0
+	User-Agent: NCSA_Mosaic/2.0 (Windows 3.1)
+	
+	200 OK
+	Date: Tue, 15 Nov 1994 08:12:32 GMT
+	Server: CERN/3.0 libwww/2.17
+	Content-Type: text/gif
+	
+	(이미지 자체 바이너리 리턴)
+	```
+
+
+### ...... (생략)  
+.....
+
+## REST 아키텍쳐 원칙 제안
+로이 필딩(Roy Fielding)의 [논문](https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm)에서 REST 아키텍처 스타일을 2000년에 제안하게 됩니다. 여기서는 URI와 Method로 해당 자원에 대한 행위를 정의합니다.  
+또한 `Extensible Protocol Elements`에선 다양한 상태코드로 응답을 해석할 수 있어야 한다고 언급합니다. 
+
+여기서 REST API 아키텍처의 단점이 드러납니다.  
+REST는 표준이 정해져 있지 않고, 규칙 등을 프레임워크 등을 통해 강제화하지 않습니다.  
+따라서 *이것이 과연 REST 한가?* 라고 판단하는 근거는 단지 REST가 지향하는 '아키텍처의 요구 사항을 만족하는가?'로 판단할 수밖에 없습니다.
+
+추가적으로 REST 아키텍쳐는 HTTP에서만 국한된것은 아닙니다. [Post](https://www.service-architecture.com/articles/web-services/representational-state-transfer-rest.html)
+하지만, HTTP에 대한 REST아키텍쳐 점유율이 극도로 올라간 나머지 업계 표준 '처럼' 자리 잡게 되었습니다. [사실상 표준 - de facto standard](https://namu.wiki/w/%EC%82%AC%EC%8B%A4%EC%83%81%20%ED%91%9C%EC%A4%80) 
+
+# 그래서 뭐가 맞는거야?
+
+![](/assets/2023-06-27/extra_response_200.png)  
+
+  
+다시 본론으로 돌아가서, 과연 요청을 성공적으로 응답했다는 것도 `RESTful`하다고 할 수 있을까요?  
+논문에서는 200-299 상태 코드는 요청이 성공했다고 언급합니다.  
+  
+>데이터를 찾지 못해서 상태 코드 404(*NOT FOUND*) 등을 반환했다?  
+이는 완전 RESTful 하다고 할 수 있습니다.  
+  
+> 하지만, 데이터를 찾았으나 데이터가 결국 없어서 null을 성공적으로 반환했으니 200(*OK*)이 맞겠네요?  
+이러한 경우도 일부 상황에서 RESTful 하다고 할 수 있습니다.
+
+이렇게 `RESTful`에 대한 의견들이 나눠질 수 있으므로 개인마다 REST API를 구현하는 방식을 확고히 하는 건 중요합니다.  
+
+## 일단 팀이랑 상의하자
+
+- 하나의 Application에서 응답 형태 종류가 여러개가 된다면...
+`GET /myBook`, `GET /myMovie`  이 두가지 API 응답의 예시가 있습니다.
+
+- `GET /myBook`
+	- 상태코드 200 *OK*
+	```json
+{
+	"message": "myBook을 정상적으로 로드했습니다.",
+	"result": null
+}
+```
+
+- `GET /myMovie`
+	- 상태코드 404 *NOT FOUND*
+	```json
+{
+	"message": "myMovie가 없습니다."
+}
+```
+
+프론트엔드 개발자들은 이 응답 예시를 보게된다면 엄청난 곤욕에 치르게 될 것입니다.
+응답 포맷이 다르기 때문에 각 요청 마다 성공, 실패 분기를 새로 작성해주어야 되기 때문이죠.
+
+프론트엔드 입장에서 코드를 간단히 작성해보면 다음과 같습니다.
+- `GET /myBook`  
+```javascript
+fetch('http://localhost/api/myBook')
+  .then(response => {
+    if (response.ok) {
+      return response.json();
+    } else {
+      throw new Error('서버에서 응답을 받지 못했습니다.');
+    }
+  })
+  .then(data => {
+    if (data.success) {
+      console.log('API 요청 성공');
+      console.log('메시지:', data.message);
+      // 성공했을 때 수행할 작업
+    } else {
+      console.log('API 요청 실패');
+      console.log('메시지:', data.message);
+      // 실패했을 때 수행할 작업
+    }
+  })
+  .catch(error => {
+    console.log('API 요청 중 오류 발생:', error.message);
+    // 오류 발생 시 수행할 작업
+  });
+```
+- `GET /myMovie`  
+```javascript
+fetch('http://localhost/api/myMovie')
+  .then(response => {
+    if (response.ok) {
+      return response.json();
+    } else if (response.status() === 404){
+	    /* 데이터가 없을때 처리 ... */
+    } else {
+      throw new Error('서버에서 응답을 받지 못했습니다.');
+    }
+  })
+  .then(data => {
+    console.log('API 요청 성공');
+    console.log('메시지:', data.message);
+    // 성공했을 때 수행할 작업
+  })
+  .catch(error => {
+    console.log('API 요청 실패');
+    console.log('메시지:', error.message);
+    // 실패했을 때 수행할 작업
+  });
+```
+
+응답이 통일되지 않은 API가 많아 질 수록 더더욱 코드는 어지러워 질 것입니다.  
+하지만 응답이 통일 되어 있다면 어떻게 될까요?  
+
+- `GET /myBook`
+	- 상태코드 200 *OK*
+	```json
+{
+	"message":"myBook을 정상적으로 로드했습니다.",
+	"result":[]
+}
+```
+
+- `GET /myMovie`
+	- 상태코드 200 OK
+```json
+{
+	"message":"myMovie을 정상적으로 로드했습니다.",
+	"result":[
+		{
+			"title":"My Movie",
+			"director":"Jane Smith",
+			"releaseDate":"2023-02-15",
+			"genre":"SF"
+		},
+		{
+			"title":"IronMan",
+			"director":"MoonSeonghun",
+			"releaseDate":"2023-01-10",
+			"genre":"SF"
+		}
+	]
+}
+```
+
+응답이 통일되어 있다면, 클라이언트 단에서 다음과 같이 깔끔한 코드로 API 를 관리할 수 있습니다.
+
+```javascript
+const handleResponse = (response) => {
+  if (response.ok) {
+    return response.json();
+  } else {
+    throw new Error('서버에서 응답을 받지 못했습니다.');
+  }
+};
+
+const handleFailure = (error) => {
+  console.log('요청 실패');
+  console.log('메시지:', error.message);
+  // 실패했을 때 수행할 작업
+};
+
+// GET /myMovie API 요청
+fetch('http://localhost/api/myMovie')
+  .then(handleResponse)
+  .then(/* 성공 시 작업 */)
+  .catch(handleFailure);
+
+// GET /myBook API 요청
+fetch('http://localhost/api/myBook')
+  .then(handleResponse)
+  .then(/* 성공 시 작업 */)
+  .catch(handleFailure);
+```
+
+API에 대한 성공 실패 분기를 일관성 있게 관리할 수 있어서, 좋은 것 같습니다.
+*(부제 : 죽다 살아난 클라이언트 개발팀)*  
+
+**여기서 또다른 문제가 있을수가 있습니다.  
+저는 \~\~한 이유로 \~\~하게 응답하는게 좋다고 생각했는데, 클라이언트 개발팀은 의견이 다를 수도 있습니다.  
+따라서 조직에서 개발을 시작할때 이러한 규약에 대해서 논의하고 가이드라인과 스펙들을 fix할 필요가 있어 보입니다.**
+
+이야기가 길어졌으니...
+다음 포스트에서 제가 이해한 것들을 바탕으로 REST API를 설계할 때 고려하는 점들에 대해서 말씀드리도록 하겠습니다.
