@@ -26,43 +26,7 @@ order: 4
 		margin-top: 10px;
 	}
 
-/*	div.detail a {
-		color: blue;
-	}*/
 </style>
-
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-<script>
-// $(function(){
-// 	new Typed('#slogan', {
-// 		strings: ['Confident', 'Positive', 'Hardworking', 'Humble', 'Fun', 'Nice'],
-// 		typeSpeed: 100,
-// 		backSpeed: 100,
-// 		fadeOut: false,
-// 		smartBackspace: true,
-// 		cursorChar: '_',
-// 		loop: true
-// 	});
-
-// 	var myCode = `
-// 	<pre class="hljs" style="color: rgb(234, 234, 234); display: block; overflow-x: auto; background: rgb(0, 0, 0);"><span class="hljs-keyword" style="color: rgb(255, 240, 0);">public</span> <span class="hljs-keyword" style="color: rgb(255, 240, 0);">class</span> <span class="hljs-title" style="color: rgb(0, 255, 255); font-weight: 700;">Blog</span>{
-//     <span class="hljs-function"><span class="hljs-keyword" style="color: rgb(255, 240, 0);">public</span> <span class="hljs-keyword" style="color: rgb(255, 240, 0);">static</span> <span class="hljs-keyword" style="color: rgb(255, 240, 0);">void</span> <span class="hljs-title" style="color: rgb(0, 255, 255); font-weight: 700;">main</span>(<span class="hljs-params" style="color: rgb(218, 0, 0);">String[] args</span>) </span>{
-//         System.<span class="hljs-keyword" style="color: rgb(255, 240, 0);">out</span>.println(<span class="hljs-string" style="color: rgb(0, 255, 0);">"Welcome to my blog!"</span>);
-//     }
-// }</pre>
-// 	`;
-
-// 	new Typed('#introduce', {
-// 		strings: [myCode],
-// 		typeSpeed: 10,
-// 		fadeOut: false,
-// 		cursorChar: '',
-// 		loop: false
-// 	});
-// })
-</script>
-
 
 <!-- <span id="slogan"></span> -->
 <!-- <br/> -->
@@ -71,62 +35,70 @@ order: 4
 
 # (현재 공사중입니다... )....  
 # 문성훈 **MoonSeonghun**
+- Back-end Enginner를 꿈꾸고 있는 대학생입니다.
+- `지속 가능한 코드 작성` , `코드와 함께 성장하기`에 관심이 많습니다.
+- 남들이 봤을때 `같이 일하고 싶을 만한 코드`를 작성하려고 많이 노력합니다.
 
 ## 1. Outline
 ### 1.1. Profile
 이름 : 문성훈
-- 생년월일: 00. 10. 27.
-- 연락처: 010-
-- Github: [https://github.com/PENEKhun](https://github.com/PENEKhun)
-- Blog: [https://blog.huni.kr](https://blog.huni.kr/)
+- 🙋🏻‍♂️ 생년월일: 00. 10. 27.
+- 💌 Email: penekhun At gmail.com
+- 📕 Blog: [https://blog.huni.kr](https://blog.huni.kr/)
+- 🐙 Github: [https://github.com/PENEKhun](https://github.com/PENEKhun)
+- 🫡 육군 병장 만기전역 <em>(20. 05. ~ 21. 11.)</em>
 
-### 1.2. Military Service
-- 3사단 포병여단 본부 전산병 - 병장 만기전역 <em>(20. 05. ~ 21. 11.)</em>
-
-### 1.3. Education
+### 1.2. Education
 - 순천향대학교 정보보호학과 <em>(19. 03. ~ 현재 재학중)</em>
 - 대구대학교 정보보호영재교육원 고등전문A 수료 (17. 03. ~ 17. 12.)
 
-### 1.4. Awards
+### 1.3. Awards
 - 소프트웨어 개발보안 경진대회: 한국인터넷진흥원장상 <em>(22. 07.)</em>
 
-### 1.5. Skills
+### 1.4. Skills
 
-Skill        | Experiences | Careers | Note
--------------|-------------|---------|-----------------------------------
-JAVA         | -           | -       | -
-JavaScript   | -           | -       | -
-Infra/Cloud  | -           | -       | -
-DB/SQL       | -           | -       | -
+- Main Stack  
+JAVA, Springboot, MySQL
+
+- Sub Stack  
+JavaScript, Simple front-end tasks
 
 
-### 1.6. Publication & Speaker
+### 1.5. Publication & Speaker
 - **문성훈**, 이예진, 윤진희, 이재원(대구대학교 정보보호영재교육원), 김호엽(대구대학교), "Usable Security관점에서 본 포털사이트 로그인API의 취약점" <em>(17. 12. 09.)</em>
-	- [Download Document](/assets/aboutme/로그인api와usable_security _최최종_hykim-2.hwp)
-	- [Download Poster](/assets/aboutme/usableSecurity_poster.jpeg)
+	- <a href="/assets/aboutme/로그인api와usable_security _최최종_hykim-2.hwp" target="_blank">Download Document</a>
+<!--	- [Download Poster](/assets/aboutme/usableSecurity_poster.jpeg) -->
 
 <!-- 
 ### 1.7. Certification
 - NULL
 -->
 
-### 1.8. Expreiences
-#### 1.8.1. **청소년 비영리 개발단체** PENEKSOFT
+### 1.6. Expreiences
+추후 작성예정...  
+
+<!--
+#### 1.6.1. **청소년 비영리 개발단체** PENEKSOFT
 중학생시절, 재미삼아 SNS에서 만난 개발자 친구들끼리 개발 단체 운영했습니다. 규모는 대략 5명정도 되었습니다.
 > **'쓸데없이 어려운 퀴즈'** 앱 다운로드 수 1000**+**달성 *(평점 4.292)*
 
-#### 1.8.2. 대구대학교 **정보보호영재교육원** 
+#### 1.6.2. 대구대학교 **정보보호영재교육원** 
 대략 200여명 중, **1등 성적**으로 수료하여서 대구대학교 총장상을 수여받은 적이 있습니다.
 
-#### 1.8.3. **화이트해킹팀** Demon
+#### 1.6.3. **화이트해킹팀** Demon
 todo
 
-#### 1.8.4. 프리랜서 개발 경험
+#### 1.6.4. 프리랜서 개발 경험
 todo
+-->
 
 ## 2. Introduction
+추후 작성예정...
+
+
 
 ## 3. My Projects
+> 자세한 정보들은 추후 작성 예정입니다. 
 
 ### 3.1. Personal Projects
 
@@ -153,12 +125,11 @@ todo
 | Client           | Description                  | Project            | Used My Skills              | Special Note
 ------------------|---------------------------|--------------------|---------------------|---------------------|
 |오송첨단의료산업진흥재단<br/>신약개발지원센터 | 면역원성 예측 및 개선 분석 사이트 | -                  | PHP                 | 분석에 사용되는 ML 스크립트를 제외한 풀스택(관리자페이지 포함) 개발 |
-|시프트삼 | 편집샵(셀렉트샵) 모음 서비스    | #SHIFT3            | Springboot, MySQL   | 풀스택 개발(관리자페이지 포함)|
-|propmate | 건축 견적 사이트              | 프롭메이트            | NodeJS, MySQL       | 풀스택 개발(관리자페이지 포함)| 
+|시프트삼 | 라이프스타일 편집샵 큐레이션 플랫폼 개발    | #SHIFT3            | Springboot, MySQL   | 풀스택 개발(관리자페이지 포함)|
+|propmate | 오픈API 활용 부동산 개발 비용 예상 서비스              | 프롭메이트            | NodeJS, MySQL       | 풀스택 개발(관리자페이지 포함)| 
 |와이드바이(구 EG통상)  | 타오바오 상품 정보 크롤링 확장프로그램 | Wide Scrap      | Springboot, JavaScript    | 풀스택 개발    |
 |엔큐브스튜디오        | 웹 동영상 자막 번역 확장프로그램    | NCubeWebVidTrans  | JavaScript |
 |상상연구소           | NFT 홍보 서비스              | MintingArts        | Springboot, MySQL         | RESTful API 및 관리자 페이지 개발|
-|일산365한방병원      | 한방병원 사이트 제작 (CAFE24 빌더) | GLotto             | -                | |
 |-                 | 로또 조합기 프로그램           | GLotto             | C#, PHP             | |
 
 > 작업일 순으로 표를 작성하였습니다.
