@@ -16,6 +16,7 @@ order: 4
      flex-wrap: wrap;
      align-items: flex-start;
      justify-content: space-between;
+     margin-bottom: 1.5rem;
 }
  .project {
      width: 100%;
@@ -53,9 +54,6 @@ order: 4
 }
  .project_wrap .extra div h2 {
  margin-top: 0 !important;
- }
- .project_wrap .extra {
-	 margin-bottom: 2rem;
  }
  .project .project-duration {
      margin-bottom: 10px;
@@ -114,6 +112,10 @@ order: 4
   }
 }
 
+p.link {
+	margin: 0;
+}
+
 }
 
 </style>
@@ -147,11 +149,16 @@ order: 4
 
 ### 1.4. Skills
 
-- Main Stack  
-JAVA, Springboot, MySQL
+- 주요 기술  
+	- JAVA (SpringBoot)
+	- MySQL
 
-- Sub Stack  
-JavaScript, Simple front-end tasks
+- 여차하면 쓸 수 있는 것들  
+	- JavaScript
+	- 간단한 프론트엔드 작업들
+
+- 못하지만 관심을 가지고 배우고 있는 기술
+	- DevOps (docker, k8s)
 
 
 ### 1.5. Publication & Speaker
@@ -201,8 +208,7 @@ const myProj = [
     duration: "2023년 6월 - 2023년 9월",
     summarize: "지속 가능한 소비 문화 형성을 위한 플랫폼",
     myRole: "Backend -%",
-    linkCaption: "",
-    linkHref: "",
+    links: [{ caption: "Github", href: "https://github.com/a-na-ba-da/" }],
     stack: ["JAVA Spring Boot, MySQL"],
   },
   {
@@ -212,8 +218,12 @@ const myProj = [
     duration: "2023년 2월 - 2023년 3월",
     summarize: "라이프스타일 편집샵 큐레이션 플랫폼",
     myRole: "관리자페이지 포함 100%",
-    linkCaption: "",
-    linkHref: "",
+    links: [
+      {
+        caption: "운영중인 페이지",
+        href: "https://shift3.co.kr",
+      },
+    ],
     stack: ["JAVA Spring Boot, Thymeleaf, MySQL"],
   },
   {
@@ -223,8 +233,7 @@ const myProj = [
     duration: "2023년 12월 - 2023년 3월",
     summarize: "오송첨단의료산업진흥재단 신약개발지원센터 연구과제",
     myRole: "ML 스크립트 외 100% ",
-    linkCaption: "",
-    linkHref: "",
+    links: [],
     stack: ["PHP, JavaScript"],
   },
   {
@@ -234,22 +243,30 @@ const myProj = [
     duration: "2022년 11월 - 2022년 12월",
     summarize: "오픈API 활용 부동산 개발 비용 예상 서비스",
     myRole: "관리자페이지 포함 100%",
-    linkCaption: "",
-    linkHref: "",
+    links: [
+      {
+        caption: "운영중인 페이지",
+        href: "http://propmate.kr",
+      },
+    ],
     stack: ["JavaScript Node.js, MySQL"],
   },
   {
     name: "WideScrap 상품 수집 확장프로그램",
     type: "아웃소싱 프로젝트",
-    image:"https://media.istockphoto.com/id/1399859917/ko/%EB%B2%A1%ED%84%B0/%EC%9D%B4%EB%AF%B8%EC%A7%80-%EB%B2%A1%ED%84%B0-%EA%B8%B0%ED%98%B8%EA%B0%80-%EC%97%86%EC%9C%BC%EB%A9%B0-%EC%82%AC%EC%9A%A9-%EA%B0%80%EB%8A%A5%ED%95%9C-%EC%95%84%EC%9D%B4%EC%BD%98%EC%9D%B4-%EC%97%86%EC%8A%B5%EB%8B%88%EB%8B%A4-%EC%9D%B4-%EC%88%9C%EA%B0%84-%EC%9E%90%EB%A6%AC-%ED%91%9C%EC%8B%9C%EC%9E%90%EB%A5%BC%EC%9C%84%ED%95%9C-%EA%B0%A4%EB%9F%AC%EB%A6%AC%EA%B0%80-%EC%97%86%EC%8A%B5%EB%8B%88%EB%8B%A4.jpg?s=170667a&w=0&k=20&c=hFf7ccLdRkyVpPbHA5S_aAcB805YyXWDL9Oyn6Ff_8c=",
+    image:
+      "https://media.istockphoto.com/id/1399859917/ko/%EB%B2%A1%ED%84%B0/%EC%9D%B4%EB%AF%B8%EC%A7%80-%EB%B2%A1%ED%84%B0-%EA%B8%B0%ED%98%B8%EA%B0%80-%EC%97%86%EC%9C%BC%EB%A9%B0-%EC%82%AC%EC%9A%A9-%EA%B0%80%EB%8A%A5%ED%95%9C-%EC%95%84%EC%9D%B4%EC%BD%98%EC%9D%B4-%EC%97%86%EC%8A%B5%EB%8B%88%EB%8B%A4-%EC%9D%B4-%EC%88%9C%EA%B0%84-%EC%9E%90%EB%A6%AC-%ED%91%9C%EC%8B%9C%EC%9E%90%EB%A5%BC%EC%9C%84%ED%95%9C-%EA%B0%A4%EB%9F%AC%EB%A6%AC%EA%B0%80-%EC%97%86%EC%8A%B5%EB%8B%88%EB%8B%A4.jpg?s=170667a&w=0&k=20&c=hFf7ccLdRkyVpPbHA5S_aAcB805YyXWDL9Oyn6Ff_8c=",
     duration: "2022년 9월 - 2022년 10월",
     summarize:
       "크롬 확장프로그램으로 타오바오에서 상품을 크롤링하고,<br/>별도의 API를 만들어서 자사 DB에 Insert하는 프로젝트",
     myRole: "크롬 확장프로그램 100%<br/>백엔드 100%",
-    linkCaption:
-      "관련 블로그 포스팅 - 스프링부트에서 비동기를 사용하여 블로킹 문제 일부 해결하기",
-    linkHref:
-      "https://blog.huni.kr/posts/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%97%90%EC%84%9C-%EB%B9%84%EB%8F%99%EA%B8%B0%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EC%97%AC-%ED%8A%B8%EB%9E%9C%EC%A0%9D%EC%85%98%EC%97%90%EC%84%9C-%EB%B8%94%EB%A1%9C%ED%82%B9-%EB%AC%B8%EC%A0%9C-%EC%9D%BC%EB%B6%80-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0/",
+    links: [
+      {
+        caption:
+          "관련 블로그 포스팅 - 스프링부트에서 비동기를 사용하여 블로킹 문제 일부 해결하기",
+        href: "https://blog.huni.kr/posts/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%97%90%EC%84%9C-%EB%B9%84%EB%8F%99%EA%B8%B0%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EC%97%AC-%ED%8A%B8%EB%9E%9C%EC%A0%9D%EC%85%98%EC%97%90%EC%84%9C-%EB%B8%94%EB%A1%9C%ED%82%B9-%EB%AC%B8%EC%A0%9C-%EC%9D%BC%EB%B6%80-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0/",
+      },
+    ],
     stack: ["JAVA Spring Boot, MySQL", "JavaScript(Chrome Extension)"],
     extra: {
       Earned: [
@@ -266,8 +283,12 @@ const myProj = [
     duration: "2022년 8월",
     summarize: "22년도 소프트웨어 개발보안 경진대회 수상작",
     myRole: "풀스택 100%",
-    linkCaption: "제 9회 소프트웨어 개발보안 시큐어코딩 해커톤 리뷰",
-    linkHref: "https://blog.huni.kr/posts/SecureCoding-Contest-9th-Review/",
+    links: [
+      {
+        caption: "제 9회 소프트웨어 개발보안 시큐어코딩 해커톤 리뷰",
+        href: "https://blog.huni.kr/posts/SecureCoding-Contest-9th-Review/",
+      },
+    ],
     stack: ["JAVA Spring Boot, MySQL", "클라이언트 Vue.JS"],
   },
 
@@ -280,8 +301,6 @@ const myProj = [
     summarize:
       "순천향대학교 정보보호학과에서 주관하고 청소년을 대상으로 개최하는 해킹대회 플랫폼",
     myRole: "백엔드 100%<br/>관리자 페이지 100%<br/>사용자 페이지 1%",
-    linkCaption: "",
-    linkHref: "",
     stack: ["JAVA Spring Boot, MySQL, Redis", "관리자 페이지 Vue.JS"],
     extra: {
       Earned: [
@@ -298,8 +317,6 @@ const myProj = [
     duration: "2022년 8월",
     summarize: "NFT 온라인 홍보관",
     myRole: "백엔드 100%<br/>관리자 페이지 100%",
-    linkCaption: "",
-    linkHref: "",
     stack: ["JAVA Spring Boot, Thymeleaf, MySQL"],
   },
 
@@ -312,8 +329,12 @@ const myProj = [
     summarize:
       "파이썬 프로그래밍 과목 팀프로젝트<br/>종단간 AES 암호화 통신을 사용하는 단체 채팅 프로그램",
     myRole: "클라이언트 95%<br/>서버 10%",
-    linkCaption: "Github",
-    linkHref: "https://github.com/BloodSweatTearz/Pyting",
+    links: [
+      {
+        caption: "Github",
+        href: "https://github.com/BloodSweatTearz/Pyting",
+      },
+    ],
     stack: ["python"],
   },
 
@@ -328,15 +349,32 @@ const myProj = [
     linkCaption: "",
     linkHref: "",
     stack: ["Java Spring Boot, MySQL"],
+    links: [
+      {
+        caption: "Github",
+        href: "https://github.com/PENEKhun/hangul-shortUrl",
+      },
+      {
+        caption:
+          "# 1년 전 개발한 프로젝트 건드려보기 3 > 읽기 힘든 긴 메서드, 짧고 읽기 쉽게 바꾸기",
+        href: "https://blog.huni.kr/posts/1%EB%85%84-%EC%A0%84-%EA%B0%9C%EB%B0%9C%ED%95%9C-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B1%B4%EB%93%9C%EB%A0%A4%EB%B3%B4%EA%B8%B0-3/",
+      },
+      {
+        caption: "# 1년 전 개발한 프로젝트 건드려보기 2 > 기존 코드 냄새 맡기",
+        href: "https://blog.huni.kr/posts/1%EB%85%84-%EC%A0%84-%EA%B0%9C%EB%B0%9C%ED%95%9C-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B1%B4%EB%93%9C%EB%A0%A4%EB%B3%B4%EA%B8%B0-%EA%B8%B0%EC%A1%B4-%EC%BD%94%EB%93%9C-%EB%83%84%EC%83%88-%EB%A7%A1%EA%B8%B0-(%ED%82%81%ED%82%81)/",
+      },
+      {
+        caption: "# 1년 전 개발한 프로젝트 건드려보기 1 > 시작하기 앞서",
+        href: "https://blog.huni.kr/posts/1%EB%85%84-%EC%A0%84-%EA%B0%9C%EB%B0%9C%ED%95%9C-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B1%B4%EB%93%9C%EB%A0%A4%EB%B3%B4%EA%B8%B0-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-%EC%95%9E%EC%84%9C/",
+      },
+    ],
     extra: {
       Earned: ["- 프로젝트 종료 1년후, 이를 리팩토링 해보는 시간을 가졌음"],
     },
   },
 ];
 
-setTimeout(() => drawProjects(), 300);
-
-function drawProjects() {
+window.onload = function drawProjects() {
   const myProjectsElement = document.querySelector(".myProjects");
   myProj.forEach((project) => {
     const extraSections = [];
@@ -375,12 +413,13 @@ function drawProjects() {
             </div>
           </div>
           <div>
-          ${
-            project.linkCaption !== ""
-              ? `<p>link : <a href="${project.linkHref}" target="_blank">${project.linkCaption}</a></p>`
-              : ""
-          }
           ${extraSections.join("")}
+          ${(project.links || [])
+            .map(
+              (link) =>
+                ` <p class="link">link: <a href="${link.href}" target="_blank">${link.caption}</a></p> `,
+            )
+            .join("")}
           <div>
         </div>
       `;
@@ -389,13 +428,14 @@ function drawProjects() {
     tempElement.innerHTML = projectHTML;
     myProjectsElement.appendChild(tempElement.firstElementChild);
   });
-}
-
+};
 </script>
 
 <div class="myProjects">
 
 </div>
+
+-- 
 
 <!--
 
