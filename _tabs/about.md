@@ -100,6 +100,20 @@ order: 4
          padding-top: 0;
          border-top: none;
     }
+    }
+@media screen and (max-width: 849px) {
+  .project {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .project img {
+    width: 200px;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
 }
 
 </style>
