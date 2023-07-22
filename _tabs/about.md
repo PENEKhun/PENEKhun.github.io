@@ -102,7 +102,8 @@ order: 4
 @media screen and (max-width: 849px) {
   .project {
     flex-direction: column-reverse;
-    align-items: center;
+	align-items: baseline;
+
   }
 
   .project img {
