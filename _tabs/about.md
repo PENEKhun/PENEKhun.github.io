@@ -244,12 +244,6 @@ const myProj = [
     duration: "2022년 11월 - 2022년 12월",
     summarize: "오픈API 활용 부동산 개발 비용 예상 서비스",
     myRole: "관리자페이지 포함 100%",
-    links: [
-      {
-        caption: "운영중인 페이지",
-        href: "http://propmate.kr",
-      },
-    ],
     stack: ["JavaScript Node.js, MySQL"],
   },
   {
