@@ -74,4 +74,5 @@ public void throwsCheckedException() {
 ![](/assets/2023-09-12/err.png)
 컴파일이 정상적으로 진행되며, Checked 예외가 잘 발생한것을 확인할 수 있습니다.
 
-이로써 `@SneakyThrows`는 Checked Exception(예외처리가 필요한 예외들) 처리를 무시하고 실행하게 만드는 것으로 이해했습니다.
+이로써 `@SneakyThrows`는 Checked Exception(예외처리가 필요한 예외들) 처리를 무시하고 실행하게 만드는 것으로 이해할 수 있었습니다.  
+JAVA 컴파일러를 속이는 것이기 때문에... **무작정 사용하기 보단, 필요에 의해, 충분히 판단 후,** 써야 될 것 같습니다.
