@@ -2,10 +2,10 @@
 layout: post
 title: "@SneakyThrows가 뭐지??"
 tags:
-  - Springboot
   - Java
+  - Lombok
 categories:
-  - 스프링부트
+  - 롬복
 published: true
 ---
 
@@ -25,7 +25,7 @@ published: true
 
 ## @**SneakyThrows** 어노테이션
 ### JavaDoc
-일단 어노테이션의 JavaDoc을 확인 해 보겠습니다.
+일단 어노테이션의 JavaDoc을 확인 해 보겠습니다. 제일 상단에 패키지를 보면, 롬북에서 제공하는 기능임을 알 수 있었습니다.  
 ![](/assets/2023-09-12/sneakythrows-docs.png)
     
 ```java
