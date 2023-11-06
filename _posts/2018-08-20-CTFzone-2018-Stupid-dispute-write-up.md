@@ -1,19 +1,11 @@
 ---
-
 layout: post
-
 title: CTFzone 2018 quals - Stupid dispute
-
 subtitle: Stupid dispute write up
-
 tags:
-
-- Writeup
-
-- Osint
-
+  - Writeup
+  - Osint
 published: true
-
 ---
 
   
@@ -72,7 +64,7 @@ shark09@mail.ru는 당장은 아니지만 언젠가 쓰일지도 모른다.
 
   
 
-`fuck 7h15 53rv1c3 17'5 4m4z1n6 <http://dumpedlqezarfife.onion.lu/>`
+`fuck 7h15 53rv1c3 17'5 4m4z1n6 <https://dumpedlqezarfife.onion.lu/>`
 
   
 
@@ -84,7 +76,7 @@ shark09@mail.ru는 당장은 아니지만 언젠가 쓰일지도 모른다.
 
   
 
-<http://dumpelqezarfife.onion.lu>를 접속하면,
+<https://dumpelqezarfife.onion.lu>를 접속하면,
 
 <img src="/assets/2018-08-20/3.png" alt="thr" style="width:700px; height:400px"/>
 
