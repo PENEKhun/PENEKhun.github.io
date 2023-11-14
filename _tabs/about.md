@@ -474,6 +474,7 @@ window.onload = function drawProjects() {
 
 | Project                | Type   | Detail                          |
 |------------------------|----|--------------------------------|
+|[spring-restdocs](https://github.com/spring-projects/spring-restdocs) |PR| Avoid substring creation when writing a portion of a string to a StringBuilder [#900](https://github.com/spring-projects/spring-restdocs/pull/900) |
 |[jekyll-theme-chirpy](https://github.com/cotes2020/jekyll-theme-chirpy) |PR| Fix missing xml escape for alt of preview image [#1113](https://github.com/cotes2020/jekyll-theme-chirpy/pull/1113) |
 |[jekyll-theme-chirpy](https://github.com/cotes2020/jekyll-theme-chirpy) |PR| 빌드 관련 스크립트 수정 [#1114](https://github.com/cotes2020/jekyll-theme-chirpy/pull/1114) |
 |[summernote-image-attributes](https://github.com/DiemenDesign/summernote-image-attributes) |PR| 부트스트랩5 대응 [#74](https://github.com/DiemenDesign/summernote-image-attributes/issues/74) |
